@@ -4,4 +4,7 @@
 
 /.vs
 /CSDProject/.vs/CSDProject.slnx
-/WPFCSDProject/.vs/WPFCSDProject.slnx
+/WPFCSDProject/.vs
+/WPFCSDProject/WPFCSDProject/obj
+/bin
+/obj
