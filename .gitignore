@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/CSDProject/.vs/CSDProject.slnx
+/WPFCSDProject/.vs
+/WPFCSDProject/WPFCSDProject/obj
+/bin
+/obj
