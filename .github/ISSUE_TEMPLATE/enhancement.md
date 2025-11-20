@@ -1,5 +1,5 @@
-﻿---
-name: "✨ Feature/Enhancement Request"
+---
+name: "Feature/Enhancement Request"
 about: Suggest an idea for this project
 title: "[Enhancement] Short, descriptive title of the feature"
 labels: "enhancement"
