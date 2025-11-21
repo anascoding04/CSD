@@ -1,0 +1,64 @@
+<Window x:Class="WPFCSDProject.Views.TestTakingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Take Test" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock x:Name="TestNameTextBlock" Grid.Row="0" FontSize="24" FontWeight="Bold" 
+                   Margin="0,0,0,10"/>
+        <TextBlock x:Name="SubjectNameTextBlock" Grid.Row="1" FontSize="18" 
+                   Foreground="Gray" Margin="0,0,0,10"/>
+        <TextBlock x:Name="QuestionCounterTextBlock" Grid.Row="2" FontSize="16" 
+                   Margin="0,0,0,20"/>
+
+        <!-- Progress Bar -->
+        <Border Grid.Row="3" BorderBrush="LightGray" BorderThickness="1" 
+                Padding="2" Margin="0,0,0,20" x:Name="ProgressBarContainer">
+            <Rectangle x:Name="ProgressBar" Fill="#4CAF50" HorizontalAlignment="Left" 
+                       Height="30" VerticalAlignment="Stretch"/>
+        </Border>
+
+        <!-- Question Content -->
+        <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" Margin="0,0,0,20">
+            <StackPanel>
+                <TextBlock x:Name="QuestionTextBlock" FontSize="18" TextWrapping="Wrap" 
+                           Margin="0,0,0,20"/>
+
+                <StackPanel x:Name="OptionsStackPanel">
+                    <!-- Radio buttons will be added dynamically -->
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Navigation Buttons -->
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="PreviousButton" Content="Previous" Grid.Column="1" 
+                    Width="100" Height="35" Margin="5" Click="PreviousButton_Click"/>
+            <Button x:Name="NextButton" Content="Next" Grid.Column="2" 
+                    Width="100" Height="35" Margin="5" Click="NextButton_Click"/>
+            <Button x:Name="SubmitButton" Content="Submit Test" Grid.Column="2" 
+                    Width="120" Height="35" Margin="5" Click="SubmitButton_Click" 
+                    Visibility="Collapsed" Background="#FF5722" Foreground="White" 
+                    FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</Window>
+
