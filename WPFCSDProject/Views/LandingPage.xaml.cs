@@ -1,6 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using WPFCSDProject.Services;
+using WPFCSDProject.Views.Controls;
 
 namespace WPFCSDProject.Views
 {
@@ -17,13 +18,17 @@ namespace WPFCSDProject.Views
 
         public void ShowLoginView()
         {
-            var loginView = new LoginView(_authService, this);
+            var loginView = new LoginView();
+            loginView.OnLoginSuccess += (s, e) => NavigateToDashboard();
+            loginView.OnSwitchToRegister += (s, e) => ShowRegistrationView();
             AuthContentControl.Content = loginView;
         }
 
         public void ShowRegistrationView()
         {
-            var registrationView = new RegistrationView(_authService, this);
+            var registrationView = new RegisterView();
+            registrationView.OnRegistrationSuccess += (s, e) => ShowLoginView();
+            registrationView.OnSwitchToLogin += (s, e) => ShowLoginView();
             AuthContentControl.Content = registrationView;
         }
 
