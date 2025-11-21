@@ -6,7 +6,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using WPFCSDProject.Config;
 using WPFCSDProject.Models;
 using WPFCSDProject.Services;
 using WPFCSDProject.Views;
@@ -22,7 +21,7 @@ namespace WPFCSDProject.Dashboard
         {
             InitializeComponent();
             _authService = authService;
-            _databaseService = new DatabaseService(DatabaseConfig.GetConnectionString());
+            _databaseService = new DatabaseService();
             LoadDashboardData();
         }
 

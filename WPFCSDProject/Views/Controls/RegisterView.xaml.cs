@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using WPFCSDProject.Config;
 using WPFCSDProject.Models;
 using WPFCSDProject.Services;
 
@@ -23,7 +22,7 @@ namespace WPFCSDProject.Views.Controls
         {
             InitializeComponent();
             // TODO: Get from dependency injection container
-            var dbService = new DatabaseService(DatabaseConfig.GetConnectionString());
+            var dbService = new DatabaseService();
             _authService = new AuthenticationService(dbService);
         }
 

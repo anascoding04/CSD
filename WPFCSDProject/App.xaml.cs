@@ -1,7 +1,6 @@
 using System.Configuration;
 using System.Data;
 using System.Windows;
-using WPFCSDProject.Config;
 using WPFCSDProject.Services;
 using WPFCSDProject.Views;
 
@@ -17,7 +16,7 @@ namespace WPFCSDProject
         private void App_Startup(object sender, StartupEventArgs e)
         {
             // Initialize authentication service
-            var dbService = new DatabaseService(DatabaseConfig.GetConnectionString());
+            var dbService = new DatabaseService();
             _authService = new AuthenticationService(dbService);
 
             // Create mock student for development (login will be handled by colleague)

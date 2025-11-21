@@ -1,4 +1,5 @@
 using MySql.Data.MySqlClient;
+using System;
 using System.Linq;
 using WPFCSDProject.Models;
 
@@ -6,18 +7,14 @@ namespace WPFCSDProject.Services
 {
     public class DatabaseService : IDatabaseService
     {
-        private readonly string _connectionString;
-        
         // In-memory storage for test attempts during development
         private static readonly List<TestAttempt> _testAttempts = new List<TestAttempt>();
         private static int _nextAttemptId = 100; // Start from 100 to avoid conflicts with mock data
         private static bool _isInitialized = false;
         private static readonly object _lockObject = new object();
 
-        public DatabaseService(string connectionString)
+        public DatabaseService()
         {
-            _connectionString = connectionString;
-            
             // Initialize with some mock data only once
             lock (_lockObject)
             {
@@ -26,6 +23,29 @@ namespace WPFCSDProject.Services
                     InitializeMockAttempts();
                     _isInitialized = true;
                 }
+            }
+        }
+        
+        /// <summary>
+        /// Creates and opens a new connection to the database.
+        /// Usage: using (var connection = databaseService.GetConnection()) { ... }
+        /// </summary>
+        /// <returns>An open MySqlConnection object ready for queries</returns>
+        public MySqlConnection GetConnection()
+        {
+            // The connection string is stored in PrivateInfo for security
+            string connectionString = PrivateInfo.ConnectionString;
+
+            // Try to create and open the connection
+            try
+            {
+                var connection = new MySqlConnection(connectionString);
+                connection.Open();
+                return connection;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error connecting to database: " + ex.Message);
             }
         }
         
