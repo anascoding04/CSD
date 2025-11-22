@@ -19,7 +19,7 @@ namespace WPFCSDProject.Lecturer
     {
         public LecturerDashboard()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }
