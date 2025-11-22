@@ -1,0 +1,98 @@
+﻿<Window x:Class="WPFCSDProject.Views.Lecturer.LecturerDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lecturer Dashboard" Height="600" Width="900"
+        Background="{StaticResource PageBackgroundBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="White" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
+            <Grid Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="LOGO" FontWeight="Bold" FontSize="16" Margin="0,0,20,0"/>
+                    <TextBlock Text="Switch to admin dashboard" TextDecorations="Underline" Foreground="Blue" VerticalAlignment="Center" Cursor="Hand"/>
+                </StackPanel>
+
+                <TextBlock Grid.Column="1" Text="Lecturer Dashboard" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="Username" Margin="0,0,15,0" VerticalAlignment="Center"/>
+                    <Button Content="Logout" Padding="10,5"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="Search students" Padding="5" VerticalContentAlignment="Center"/>
+                    <Button Grid.Column="1" Content="Go" Padding="15,5" Margin="5,0,0,0"/>
+                </Grid>
+
+                <Button Content="View pending approvals (3)" HorizontalAlignment="Left" Background="{StaticResource NeutralBrush}"  Margin="0,0,0,20" Padding="10,5"/>
+
+                <Border Style="{StaticResource CardStyle}" Padding="10">
+                    <StackPanel>
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="Kira Sokoya - ws373176@weston.ac.uk" FontWeight="Bold"/>
+                                <TextBlock Text="(last login 15:23:54 - 20/10/25)" Foreground="Gray" FontSize="11"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Button Content="Edit" Style="{StaticResource ActionButton}" Background="{StaticResource PrimaryActionBrush}"/>
+                            <Button Content="Disable" Style="{StaticResource ActionButton}" Background="{StaticResource CautionActionBrush}"/>
+                            <Button Content="Terminate" Style="{StaticResource ActionButton}" Background="{StaticResource DestructiveActionBrush}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="Search tests" Padding="5" VerticalContentAlignment="Center"/>
+                    <Button Grid.Column="1" Content="Search" Padding="15,5" Margin="5,0,0,0"/>
+                </Grid>
+
+                <Button Content="Create new test" HorizontalAlignment="Left" Background="{StaticResource NeutralBrush}" Margin="0,0,0,20" Padding="10,5"/>
+
+                <Border Style="{StaticResource CardStyle}" Padding="15">
+                    <Grid>
+                        <TextBlock Text="Calculus 1" VerticalAlignment="Center" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="Edit" Style="{StaticResource ActionButton}" Background="{StaticResource PrimaryActionBrush}"/>
+                            <Button Content="Delete" Style="{StaticResource ActionButton}" Background="{StaticResource DestructiveActionBrush}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
