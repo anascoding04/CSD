@@ -4,16 +4,6 @@
         Title="Lecturer Dashboard" Height="600" Width="900"
         Background="{StaticResource PageBackgroundBrush}">
 
-   <!-- <Window.Resources>
-        <Style x:Key="ActionButton" TargetType="Button">
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Margin" Value="5,0"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-    </Window.Resources> -->
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
