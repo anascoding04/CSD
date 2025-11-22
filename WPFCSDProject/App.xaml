@@ -4,6 +4,29 @@
              xmlns:local="clr-namespace:WPFCSDProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="PageBackgroundBrush" Color="#F0F0F0"/>
+        <SolidColorBrush x:Key="CardBackgroundBrush" Color="White"/>
+        <SolidColorBrush x:Key="BorderBrush" Color="#DDDDDD"/>
+
+        <SolidColorBrush x:Key="PrimaryActionBrush" Color="#4CAF50"/>
+        <SolidColorBrush x:Key="CautionActionBrush" Color="#FF9800"/>
+        <SolidColorBrush x:Key="DestructiveActionBrush"  Color="#F44336"/>
+        <SolidColorBrush x:Key="NeutralBrush" Color="#DDDDDD"/>
+        
+        <Style x:Key="CardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource CardBackgroundBrush}"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
     </Application.Resources>
 </Application>
