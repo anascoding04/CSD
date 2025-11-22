@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPFCSDProject.Lecturer
+namespace WPFCSDProject.Views.Lecturer
 {
     /// <summary>
     /// Interaction logic for LecturerDashboard.xaml
